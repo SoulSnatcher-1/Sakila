@@ -92,7 +92,19 @@ ORDER BY
 
 /*
 Operational Analysis:
-What is the average rental duration, and does it vary by category?
+What is the average rental duration?
+*/
+
+SELECT 
+    AVG(return_date - rental_date) AS average_rental_duration
+FROM 
+    rental
+WHERE 
+    return_date IS NOT NULL;
+
+/*
+Operational Analysis:
+How much does it vary by category?
 */
 
 SELECT 
